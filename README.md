@@ -8,8 +8,9 @@ Below is a **clear, step-by-step guide** to **import a Spring Boot backend proje
 
 ### Objective
 
-To import a Spring Boot backend project from GitHub into Spring Tool Suite (STS) IDE and successfully run the application.
+This Spring Boot Mini project is developed to demonstrate the implementation of RESTful web services for performing CRUD (Create, Read, Update, Delete) operations on an Employee entity. The application exposes multiple REST APIs that allow users to save employee data, retrieve employee records, search employees based on salary criteria, update employee details, and delete employee records using unique identifiers.
 
+The primary goal of this project is to showcase how Spring Boot can be used to build REST APIs using standard HTTP methods and URL-based request handling. It also demonstrates basic data filtering operations such as finding employees by salary and within a salary range.
 
 ## Software Requirements
 

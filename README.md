@@ -4,7 +4,7 @@
 
 ---
 
-## 📌 Objective
+##  Objective
 
 This Spring Boot mini project demonstrates the implementation of **RESTful web services** to perform **CRUD (Create, Read, Update, Delete)** operations on an **Employee** entity.
 
@@ -21,7 +21,7 @@ The primary goal of this project is to showcase how **Spring Boot** can be used 
 
 ---
 
-## 🛠️ Software Requirements
+##  Software Requirements
 
 * Spring Tool Suite (STS)
 * JDK 8 or higher
@@ -30,7 +30,7 @@ The primary goal of this project is to showcase how **Spring Boot** can be used 
 
 ---
 
-## ⚙️ Technologies Used
+##  Technologies Used
 
 * Java
 * Spring Boot
@@ -43,7 +43,7 @@ The primary goal of this project is to showcase how **Spring Boot** can be used 
 
 ---
 
-## 🗄️ Database Used
+##  Database Used
 
 * MySQL
 
@@ -51,7 +51,7 @@ The primary goal of this project is to showcase how **Spring Boot** can be used 
 
 ---
 
-## 🚀 Importing and Running the Project in STS
+##  Importing and Running the Project in STS
 
 1. Open **Spring Tool Suite (STS)**
 2. Go to **File → Import**
@@ -67,7 +67,7 @@ The primary goal of this project is to showcase how **Spring Boot** can be used 
 
 ---
 
-## 🔗 REST APIs for Testing
+##  REST APIs for Testing
 
 ### Available REST Endpoints
 
@@ -133,7 +133,7 @@ The primary goal of this project is to showcase how **Spring Boot** can be used 
 
 ---
 
-## ❗ Common Errors & Fixes
+##  Common Errors & Fixes
 
 | Error                      | Solution                         |
 | -------------------------- | -------------------------------- |
@@ -144,13 +144,13 @@ The primary goal of this project is to showcase how **Spring Boot** can be used 
 
 ---
 
-## 🤝 Suggestions & Improvements
+##  Suggestions & Improvements
 
 Suggestions and project improvements are always welcome!
 
 ---
 
-## 🙏 Acknowledgment
+##  Acknowledgment
 
 Thanks a lot
 

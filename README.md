@@ -92,7 +92,7 @@ The primary goal of this project is to showcase how **Spring Boot** can be used 
    Example:
 
    ```
-   http://localhost:8080/findbysalary/10000
+   http://localhost:8080/findbysalary/25000
    ```
 
 4. **Find Employees with Salary Between Range**
@@ -104,22 +104,32 @@ The primary goal of this project is to showcase how **Spring Boot** can be used 
    Example:
 
    ```
-   http://localhost:8080/findsalarybetween/9000/12000
+   http://localhost:8080/findsalarybetween/20000/30000
    ```
 
-5. **Delete Employee by ID**
-
+5. **Find by Name**
    ```
-   http://localhost:8080/deletebyid/{id}
+   http://localhost:8080/findbyname/{name}
    ```
 
    Example:
 
    ```
-   http://localhost:8080/deletebyid/1
+   http://localhost:8080/findbyname/Aniket Zanjale)
    ```
 
-6. **Update Employee by ID**
+6. **Find By ID**
+    ```
+   http://localhost:8080/searchbyid/{id}
+   ```
+
+   Example:
+
+   ```
+   http://localhost:8080/searchbyid/1
+   ```
+
+7. **Update Employee by ID**
 
    ```
    http://localhost:8080/updateById/{id}
@@ -131,6 +141,18 @@ The primary goal of this project is to showcase how **Spring Boot** can be used 
    http://localhost:8080/updateById/1
    ```
 
+8. **Delete Employee by ID**
+
+   ```
+   http://localhost:8080/deletebyid/{id}
+   ```
+
+   Example:
+
+   ```
+   http://localhost:8080/deletebyid/4
+   ```
+      
 ---
 
 ##  Common Errors & Fixes

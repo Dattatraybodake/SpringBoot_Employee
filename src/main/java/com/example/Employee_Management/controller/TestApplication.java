@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,7 +16,7 @@ import com.example.Employee_Management.exception.EmployeeNotFoundException;
 import com.example.Employee_Management.service.EmployeeService;
 
 @RestController
-@CrossOrigin("http://localhost:3000")	// path of React Server
+//@CrossOrigin("http://localhost:3000")	// path of React Server
 public class TestApplication {
 	@Autowired
 	EmployeeService empService;
@@ -29,11 +28,11 @@ public class TestApplication {
 		boolean b = empService.AddEmployee(employee);
 		if(b)
 		{
-			return "User Saved in database";
+			return "Employee Saved in database.";
 		}
 		else
 		{
-			return "Record Not Saved";
+			return "Record Not Saved.";
 		}		
 	}
 	
@@ -78,11 +77,11 @@ public class TestApplication {
 		return e;
 	}
     
-    @PutMapping("/updateById/{employee_number}")
+    @PutMapping("/updateById/{employee_number}") // not worked
     public Optional<Employee> UpdateById(@PathVariable("employee_number") Integer employee_number)
     {
     	Optional<Employee> e = empService.getEmployeeById(employee_number);
-    	if(e!=null) 		
+    	if(e==null) 		
     	{
     		return e;
     	}

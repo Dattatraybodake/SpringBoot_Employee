@@ -4,8 +4,6 @@ public class ErrorMessage {
 	private int statuscode;
 	private String message;
 	
-	
-
 	public int getStatuscode() {
 		return statuscode;
 	}

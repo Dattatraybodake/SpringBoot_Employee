@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.CRUD.entity.Register;
 import com.example.Employee_Management.entity.Employee;
 import com.example.Employee_Management.repository.EmployeeRepository;
 

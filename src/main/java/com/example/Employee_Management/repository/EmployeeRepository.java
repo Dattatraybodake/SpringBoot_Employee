@@ -9,8 +9,10 @@ import com.example.Employee_Management.entity.Employee;
 public interface EmployeeRepository extends JpaRepository<Employee, Integer>{
 
 	public Employee findByName(String name);
-	
+
+
 	public Employee findBySalaryLessThan(int salary);
-	
+
+
 	public Employee findBySalaryBetween(int minsalary, int Maxsalary);
 }

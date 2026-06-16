@@ -1,10 +1,8 @@
 package com.example.Employee_Management.entity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="employee")
@@ -54,6 +52,12 @@ public class Employee {
 
 	@Column(name="salary")
 	private int salary;
+
+	@Column(nullable = false )
+	private String userName;
+
+	@Column(nullable = false)
+	private  String password;
 
 	public int getEmployee_number() {
 		return employee_number;
@@ -158,13 +162,41 @@ public class Employee {
 	public void setSalary(int salary) {
 		this.salary = salary;
 	}
-	
-	
 
-	public Employee(int employee_number, String name, String department, String designation, String location,
-			int paid_days, int weekly_off, int holiday, String pan_number, long pf_uan, String bank_name,
-			long bank_acc_no, int salary) {
-		super();
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	@ManyToMany(fetch = FetchType.EAGER , cascade =CascadeType.ALL )
+	@JoinTable(
+			name = "employee_role",
+			joinColumns = @JoinColumn(name = "empId",referencedColumnName = "employee_number"),
+			inverseJoinColumns = @JoinColumn(name = "roleId",referencedColumnName = "id")
+	)
+	private Set<Role> roleSet;
+
+	public Set<Role> getRoleSet() {
+		return roleSet;
+	}
+
+	public void setRoleSet(Set<Role> roleSet) {
+		this.roleSet = roleSet;
+	}
+
+	public Employee(int employee_number, String name, String department, String designation, String location, int paid_days, int weekly_off, int holiday, String pan_number, long pf_uan, String bank_name, long bank_acc_no, int salary, String userName, String password, Set<Role> roleSet) {
 		this.employee_number = employee_number;
 		this.name = name;
 		this.department = department;
@@ -178,5 +210,8 @@ public class Employee {
 		this.bank_name = bank_name;
 		this.bank_acc_no = bank_acc_no;
 		this.salary = salary;
+		this.userName = userName;
+		this.password = password;
+		this.roleSet = roleSet;
 	}
 }

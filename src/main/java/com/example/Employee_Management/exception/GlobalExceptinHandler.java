@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class GlobalExceptinHandler {
 
 	@ExceptionHandler(value=EmployeeNotFoundException.class)
-	@ResponseStatus(HttpStatus.CONFLICT)
+	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public @ResponseBody ErrorMessage handleEmployeeException(EmployeeNotFoundException exception)
 	{
-	return new ErrorMessage(HttpStatus.CONFLICT.value(), exception.getMessage());
+	return new ErrorMessage(HttpStatus.NO_CONTENT.value(), exception.getMessage());
 	
 	}
 }

@@ -1,9 +1,13 @@
 package com.example.Employee_Management.Dto;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class LoginReq {
 
+    @NotBlank(message = " User Name Should Not Be Blank")
     private String userName;
 
+    @NotBlank(message = " Password Should Not Be Blank")
     private String password;
 
 

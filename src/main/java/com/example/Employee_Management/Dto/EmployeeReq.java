@@ -1,9 +1,17 @@
 package com.example.Employee_Management.Dto;
 
+import jakarta.persistence.Column;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 public class EmployeeReq {
 
+    @NotBlank(message = "name Should be Not Black ")
+    @Column(unique = true)
     String name;
 
+    @NotBlank(message = " PassWord should Be Not Null and Black ")
+    @NotNull
     String password;
 
     public String getName() {

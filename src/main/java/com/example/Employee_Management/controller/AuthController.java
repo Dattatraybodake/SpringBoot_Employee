@@ -31,6 +31,7 @@ public class AuthController {
     public ResponseEntity<LoginRes> login(@RequestBody @Valid  LoginReq loginReq)
     {
         LoginRes loginRes=authService.login(loginReq);
+        System.out.println("  login Res "+loginRes.toString());
         return new ResponseEntity<>(
                 loginRes,HttpStatus.OK
         );

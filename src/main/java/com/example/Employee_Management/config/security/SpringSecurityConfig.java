@@ -37,7 +37,13 @@ public class SpringSecurityConfig {
         http.csrf( c -> c.disable());
         http.authorizeHttpRequests(auth ->
                 auth
-//                        .requestMatchers(HttpMethod.POST,"/**").hasRole("ADMIN")
+                        .requestMatchers(
+                                "/swagger-ui/**",
+                                         "/v3/api-docs",
+                                         "/swagger-ui.html",
+                                        "/auth/**"
+                                ).permitAll()
+                        .requestMatchers(HttpMethod.POST,"/**").hasAnyRole("ADMIN","USER")
                         .requestMatchers(HttpMethod.GET,"/**").hasAnyRole("ADMIN","USER")
                         .requestMatchers("/auth/**").permitAll()
                         .anyRequest().authenticated()
@@ -45,8 +51,6 @@ public class SpringSecurityConfig {
         http.httpBasic(Customizer.withDefaults());
         http.exceptionHandling( ex ->ex.authenticationEntryPoint(authenticationEntryPoint));
         http.addFilterBefore(authenticationFilter,UsernamePasswordAuthenticationFilter.class);
-
-
         return http.build();
     }
 

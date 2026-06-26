@@ -31,4 +31,12 @@ public class LoginRes {
         this.accessToken = accessToken;
         this.token = token;
     }
+
+    @Override
+    public String toString() {
+        return "LoginRes{" +
+                "accessToken='" + accessToken + '\'' +
+                ", token='" + token + '\'' +
+                '}';
+    }
 }

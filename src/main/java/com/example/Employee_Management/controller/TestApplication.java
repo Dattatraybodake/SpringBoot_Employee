@@ -3,7 +3,10 @@ package com.example.Employee_Management.controller;
 import java.util.List;
 import java.util.Optional;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,11 +19,13 @@ import com.example.Employee_Management.exception.EmployeeNotFoundException;
 import com.example.Employee_Management.service.EmployeeService;
 
 @RestController
+@SecurityRequirement(name = "Bearer Authentication")
 //@CrossOrigin("http://localhost:3000")	// path of React Server
 public class TestApplication {
 	@Autowired
 	EmployeeService empService;
 
+	@SecurityRequirement(name = "Bearer Authentication")
 	@PostMapping("/saveemployee")
 	public String AddEmployee(@RequestBody Employee employee)
 	{
@@ -35,14 +40,16 @@ public class TestApplication {
 			return "Record Not Saved.";
 		}		
 	}
-	
+
+	@SecurityRequirement(name = "Bearer Authentication")
 	@GetMapping(value="/viewdata")
-	public List<Employee> getAllEmp() throws Exception
+	public ResponseEntity<List<Employee>> getAllEmp() throws Exception
 	{
 		List<Employee> list = empService.getAllEmployee();
 		if(list.size() !=0)
 		{
-			return list;
+			System.out.println("  list ="+list.size());
+			return new ResponseEntity<>(list, HttpStatus.OK);
 		}
 		else
 		{

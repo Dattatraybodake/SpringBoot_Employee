@@ -14,6 +14,5 @@ public class GlobalExceptinHandler {
 	public @ResponseBody ErrorMessage handleEmployeeException(EmployeeNotFoundException exception)
 	{
 	return new ErrorMessage(HttpStatus.CONFLICT.value(), exception.getMessage());
-	
 	}
 }

@@ -1,37 +1,32 @@
 package com.example.Employee_Management.entity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.example.Employee_Management.enums.Gender;
+import jakarta.persistence.*;
 import lombok.Data;
 
-@Entity
+
 @Data
+@Entity
 @Table(name="employee")
 public class Employee {
 	
 	@Id
 	@Column(name="employee_number")
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private int employee_id;
+	private long employee_id;
 	
-	@Column(name="name", nullable=false)
+	@Column(name="employee_name")
 	private String employee_name;
 	
-	@Column(name="email", nullable=false)
+	@Column(name="email")
 	private String email;
 	
-	@Column(name="mobile_number", nullable=false)
+	@Column(name="mobile_number")
 	private String mobile_number;
 	
-	@Column(name="password", nullable=false)
+	@Column(name="password")
 	private String password;
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name="gender", nullable=false)
-	private String gender;
+	@Column(name="gender")
+	private Gender gender;
 }

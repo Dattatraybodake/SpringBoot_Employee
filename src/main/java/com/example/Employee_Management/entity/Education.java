@@ -1,5 +1,14 @@
 package com.example.Employee_Management.entity;
 
-public class Education {
+import jakarta.persistence.*;
+import lombok.Data;
 
+@Data
+@Entity
+@Table(name="education")
+public class Education {
+	@Id
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	private long education_id;
+	private String education;
 }
